@@ -1,15 +1,13 @@
 package presenter;
 
 import model.Animals;
+import model.CatPlus;
 import model.Reestr;
 import view.View;
 
 import java.lang.reflect.Method;
 import java.text.ParseException;
-import java.util.Arrays;
-import java.util.Scanner;
-
-import java.util.ArrayList;
+import java.util.*;
 
 public class Presenter {
     Reestr reestr;
@@ -25,7 +23,8 @@ public class Presenter {
         boolean flag = true;
         while (flag) {
             System.out.println();
-            System.out.println("Выберите действие: 1 - посмотреть всех животных, 2 - создать новое животное, 3 - посмотреть, что умеет животное 0 - выход");
+            System.out.println("Выберите действие: 1 - посмотреть всех животных, 2 - создать новое животное," +
+                    " 3 - посмотреть, что умеет животное, 4 - научить новому действию, 0 - выход");
             String key = iScanner.next();
             switch (key) {
                 case "2":
@@ -44,8 +43,8 @@ public class Presenter {
                     break;
                 case "3":
                     System.out.println("Выбирите животное, введя его номер: ");
-                    for (Animals animal : reestr.getReestr().values()) {
-                        System.out.println(reestr);
+                    for (Integer i : reestr.getReestr().keySet()) {
+                        System.out.println(i + ":" + reestr.getReestr().get(i));
                     }
                     int keyId = iScanner.nextInt();
 
@@ -58,6 +57,15 @@ public class Presenter {
                             System.out.println(m.getName());
                         }
                     }
+                    break;
+                case "4":
+                    System.out.println("Выбирите животное, введя его номер: ");
+                    for (Integer i : reestr.getReestr().keySet()) {
+                        System.out.println(i + ":" + reestr.getReestr().get(i));
+                    }
+                    int keyIdA = iScanner.nextInt();
+                    CatPlus catPlus = new CatPlus(reestr.getReestr().get(keyIdA));
+                    reestr.getReestr().put(keyIdA, catPlus);
                     break;
                 case "0":
                     flag = false;
