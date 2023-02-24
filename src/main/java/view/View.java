@@ -10,17 +10,6 @@ import java.util.Scanner;
 public class View {
     Scanner iScaner = new Scanner(System.in);
 
-    void app() throws ParseException {
-        System.out.println("Выберите действие: 1 - посмотреть всех животных, 2 - создать новое животное");
-        int act = iScaner.nextInt();
-        if (act == 1) {
-            System.out.println("All animals");
-
-        } else {
-            setAnimals();
-        }
-    }
-
     public Animals setAnimals() throws ParseException {
 
         Scanner iScaner = new Scanner(System.in);
@@ -36,6 +25,8 @@ public class View {
                 System.out.println("Введите дату рождения в виде \"dd/MM/yyyy\": ");
                 String dateS = iScaner.next();
                 Date dateBirthday = new SimpleDateFormat("dd/MM/yyyy").parse(dateS);
+
+
                 Animals cat = new Cat(name, dateBirthday);
                 return cat;
             } else if (iDPets == 2) {

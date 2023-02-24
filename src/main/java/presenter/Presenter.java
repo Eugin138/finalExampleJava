@@ -35,9 +35,8 @@ public class Presenter {
                         System.out.println("Реестр пустой");
                         break;
                     } else {
-                        for (Animals animal: reestr.getReestr()
-                             ) {
-                            System.out.println(animal);
+                        for (Animals animal : reestr.getReestr().values()) {
+                            System.out.println(reestr);
                         }
                     }
                     break;

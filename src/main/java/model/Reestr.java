@@ -1,24 +1,33 @@
 package model;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 public class Reestr {
-    ArrayList<Animals> reestr;
+    Map<Integer, Animals> reestr = new HashMap<>();
+    Count count;
 
-    public ArrayList<Animals> getReestr() {
+    public Map<Integer, Animals> getReestr() {
         return reestr;
     }
 
-    public void setReestr(ArrayList<Animals> reestr) {
+    public void setReestr(Map<Integer, Animals> reestr) {
         this.reestr = reestr;
     }
 
     public void addAnimals(Animals animal){
         if(reestr == null) {
-            reestr = new ArrayList<>();
+            reestr = new HashMap<>();
         }
-        reestr.add(animal);
+        count = CountCreater.GetCreater().CreateUser();
+        System.out.println(count.getId());
+        reestr.put(count.getId(), animal);
     }
 
+    @Override
+    public String toString() {
+        return "" + reestr;
+    }
 }
