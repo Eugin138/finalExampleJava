@@ -30,4 +30,12 @@ public class Horse extends Packs{
     public void action() {
         System.out.println("I am galloping!");
     }
+
+    @Override
+    public String toString() {
+        return "Horse{" +
+                "name='" + name + '\'' +
+                ", birthday=" + birthday +
+                '}';
+    }
 }

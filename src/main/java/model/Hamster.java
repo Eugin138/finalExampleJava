@@ -30,4 +30,12 @@ public class Hamster extends Pets{
     public void action() {
         System.out.println("I am squaking!");
     }
+
+    @Override
+    public String toString() {
+        return "Hamster{" +
+                "name='" + name + '\'' +
+                ", birthday=" + birthday +
+                '}';
+    }
 }

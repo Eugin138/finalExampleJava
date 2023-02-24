@@ -30,4 +30,12 @@ public class Donkey extends Packs{
     public void action() {
         System.out.println("I am transporting cargo!");
     }
+
+    @Override
+    public String toString() {
+        return "Donkey{" +
+                "name='" + name + '\'' +
+                ", birthday=" + birthday +
+                '}';
+    }
 }

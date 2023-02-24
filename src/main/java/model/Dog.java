@@ -30,4 +30,12 @@ public class Dog extends Pets{
     public void action() {
         System.out.println("I am pawing");
     }
+
+    @Override
+    public String toString() {
+        return "Dog{" +
+                "name='" + name + '\'' +
+                ", birthday=" + birthday +
+                '}';
+    }
 }
