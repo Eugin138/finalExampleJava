@@ -3,6 +3,7 @@ package presenter;
 import model.*;
 import view.View;
 
+import java.io.IOException;
 import java.lang.reflect.Method;
 import java.text.ParseException;
 import java.util.*;
@@ -16,7 +17,7 @@ public class Presenter {
         this.view = view;
     }
 
-    public void run() throws ParseException {
+    public void run() {
         Scanner iScanner = new Scanner(System.in);
         boolean flag = true;
         while (flag) {
@@ -26,8 +27,17 @@ public class Presenter {
             String key = iScanner.next();
             switch (key) {
                 case "2":
-                    reestr.addAnimals(view.setAnimals());
-                    System.out.println("Вы создали: ");
+                    try {
+                        reestr.addAnimals(view.setAnimals());
+                        System.out.println("Вы создали: ");
+                        break;
+                    }
+                    catch (RuntimeException e) {
+                        System.out.println("Вы не создали животного");
+                    }
+                    catch (ParseException e) {
+                        System.out.println("Некорректная дата");
+                    }
                     break;
                 case "1":
                     if (reestr.getReestr() == null) {
