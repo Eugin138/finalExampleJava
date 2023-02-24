@@ -29,7 +29,8 @@ public class Presenter {
                 case "2":
                     try {
                         reestr.addAnimals(view.setAnimals());
-                        System.out.println("Вы создали: ");
+                        System.out.println("Вы создали: " +
+                                reestr.getReestr().get(reestr.getCount().getId()).getClass().getSimpleName());
                         break;
                     }
                     catch (RuntimeException e) {
