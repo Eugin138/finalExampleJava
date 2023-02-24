@@ -1,10 +1,12 @@
+package model;
+
 import java.util.Date;
 
-public class Hamster extends Pets{
+public class Donkey extends Packs{
     private String name;
     private Date birthday;
 
-    public Hamster(String name, Date birthday) {
+    public Donkey(String name, Date birthday) {
         this.name = name;
         this.birthday = birthday;
     }
@@ -26,6 +28,14 @@ public class Hamster extends Pets{
     }
 
     public void action() {
-        System.out.println("I am squaking!");
+        System.out.println("I am transporting cargo!");
+    }
+
+    @Override
+    public String toString() {
+        return "Donkey{" +
+                "name='" + name + '\'' +
+                ", birthday=" + birthday +
+                '}';
     }
 }

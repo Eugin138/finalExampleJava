@@ -1,3 +1,5 @@
+package model;
+
 import java.util.Date;
 
 public class Camel extends Packs{
@@ -27,5 +29,13 @@ public class Camel extends Packs{
 
     public void action() {
         System.out.println("I am transporting cargo!");
+    }
+
+    @Override
+    public String toString() {
+        return "Camel{" +
+                "name='" + name + '\'' +
+                ", birthday=" + birthday +
+                '}';
     }
 }
