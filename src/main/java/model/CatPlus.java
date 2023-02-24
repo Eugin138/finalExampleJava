@@ -2,10 +2,11 @@ package model;
 
 import java.util.Date;
 
-public class CatPlus extends Animals{
-    Animals catPlus;
+public class CatPlus extends Cat{
+    Cat catPlus;
 
-    public CatPlus(Animals catPlus) {
+    public CatPlus(String name, Date birthday, Cat catPlus) {
+        super(name, birthday);
         this.catPlus = catPlus;
     }
 

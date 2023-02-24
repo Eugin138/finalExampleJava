@@ -1,9 +1,12 @@
 package model;
 
-public class HamsterPlus extends Animals{
-    Animals hamsterPlus;
+import java.util.Date;
 
-    public HamsterPlus(Animals hamsterPlus) {
+public class HamsterPlus extends Hamster{
+    Hamster hamsterPlus;
+
+    public HamsterPlus(String name, Date birthday, Hamster hamsterPlus) {
+        super(name, birthday);
         this.hamsterPlus = hamsterPlus;
     }
 

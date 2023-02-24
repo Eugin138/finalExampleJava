@@ -9,6 +9,10 @@ public class Reestr {
     Map<Integer, Animals> reestr = new HashMap<>();
     Count count;
 
+    public Count getCount() {
+        return count;
+    }
+
     public Map<Integer, Animals> getReestr() {
         return reestr;
     }

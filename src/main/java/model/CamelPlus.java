@@ -1,9 +1,12 @@
 package model;
 
-public class CamelPlus extends Animals{
-    Animals camelPlus;
+import java.util.Date;
 
-    public CamelPlus(Animals camelPlus) {
+public class CamelPlus extends Camel{
+    Camel camelPlus;
+
+    public CamelPlus(String name, Date birthday, Camel camelPlus) {
+        super(name, birthday);
         this.camelPlus = camelPlus;
     }
 
