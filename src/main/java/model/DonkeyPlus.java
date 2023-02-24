@@ -1,9 +1,12 @@
 package model;
 
-public class DonkeyPlus extends Animals{
-    Animals donkeyPlus;
+import java.util.Date;
 
-    public DonkeyPlus(Animals donkeyPlus) {
+public class DonkeyPlus extends Donkey{
+    Donkey donkeyPlus;
+
+    public DonkeyPlus(String name, Date birthday, Donkey donkeyPlus) {
+        super(name, birthday);
         this.donkeyPlus = donkeyPlus;
     }
 

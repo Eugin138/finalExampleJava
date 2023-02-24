@@ -1,5 +1,5 @@
 package model;
 
-public class Animals {
+public class Animals implements FirstAction {
 
 }
