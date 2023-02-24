@@ -1,6 +1,7 @@
 package presenter;
 
 import model.Animals;
+import model.Cat;
 import model.CatPlus;
 import model.Reestr;
 import view.View;
@@ -36,8 +37,8 @@ public class Presenter {
                         System.out.println("Реестр пустой");
                         break;
                     } else {
-                        for (Animals animal : reestr.getReestr().values()) {
-                            System.out.println(reestr);
+                        for (Integer i : reestr.getReestr().keySet()) {
+                            System.out.println(i + " " +reestr.getReestr().get(i));
                         }
                     }
                     break;
@@ -64,8 +65,9 @@ public class Presenter {
                         System.out.println(i + ":" + reestr.getReestr().get(i));
                     }
                     int keyIdA = iScanner.nextInt();
-                    CatPlus catPlus = new CatPlus(reestr.getReestr().get(keyIdA));
-                    reestr.getReestr().put(keyIdA, catPlus);
+                    if (reestr.getReestr().get(keyIdA).getClass() == Cat.class) {
+                    Animals catPlus = new CatPlus(reestr.getReestr().get(keyIdA));
+                    reestr.getReestr().put(keyIdA, catPlus);}
                     break;
                 case "0":
                     flag = false;
