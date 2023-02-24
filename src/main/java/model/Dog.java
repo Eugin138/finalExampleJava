@@ -1,10 +1,12 @@
+package model;
+
 import java.util.Date;
 
-public class Camel extends Packs{
+public class Dog extends Pets{
     private String name;
     private Date birthday;
 
-    public Camel(String name, Date birthday) {
+    public Dog(String name, Date birthday) {
         this.name = name;
         this.birthday = birthday;
     }
@@ -26,6 +28,6 @@ public class Camel extends Packs{
     }
 
     public void action() {
-        System.out.println("I am transporting cargo!");
+        System.out.println("I am pawing");
     }
 }
