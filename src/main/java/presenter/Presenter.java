@@ -1,9 +1,6 @@
 package presenter;
 
-import model.Animals;
-import model.Cat;
-import model.CatPlus;
-import model.Reestr;
+import model.*;
 import view.View;
 
 import java.lang.reflect.Method;
@@ -65,9 +62,10 @@ public class Presenter {
                         System.out.println(i + ":" + reestr.getReestr().get(i));
                     }
                     int keyIdA = iScanner.nextInt();
-                    if (reestr.getReestr().get(keyIdA).getClass() == Cat.class) {
-                    Animals catPlus = new CatPlus(reestr.getReestr().get(keyIdA));
-                    reestr.getReestr().put(keyIdA, catPlus);}
+
+                    Action action = new Action();
+                    action.addAction(keyIdA, reestr);
+
                     break;
                 case "0":
                     flag = false;
